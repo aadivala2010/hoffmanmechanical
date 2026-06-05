@@ -47,28 +47,24 @@
               Request a service visit for HVAC repair, installation, maintenance,
               heat pumps, mini splits, or financing questions.
             </p>
-            <div class="booking-callout">
-              <strong>Need help faster?</strong>
-              <a href="tel:7174150784">Call 717-415-0784</a>
-            </div>
           </div>
 
           <form class="contact-form booking-form reveal" id="service-form" data-reveal>
             <label>
               Full Name
-              <input type="text" name="name" placeholder="Your full name" required />
+              <input type="text" name="name" required />
             </label>
             <label>
               Phone
-              <input type="tel" name="phone" placeholder="Best number to reach you" required />
+              <input type="tel" name="phone" required />
             </label>
             <label>
               Email
-              <input type="email" name="email" placeholder="Your email address" />
+              <input type="email" name="email" />
             </label>
             <label>
               Service Address
-              <input type="text" name="address" placeholder="Street, city, and county" required />
+              <input type="text" name="address" required />
             </label>
             <label>
               Type of Service
@@ -102,14 +98,11 @@
               <textarea
                 name="message"
                 rows="5"
-                placeholder="Tell us what is going on with the system"
                 required
               ></textarea>
             </label>
             <button class="button button-primary button-full" type="submit">Request Booking</button>
-            <p class="form-note" id="form-status">
-              This form opens your email app with the booking request pre-filled.
-            </p>
+            <p class="form-note" id="form-status"></p>
           </form>
         </div>
       </section>

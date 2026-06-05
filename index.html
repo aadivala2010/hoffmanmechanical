@@ -418,11 +418,11 @@
           <form class="contact-form reveal" id="service-form" data-reveal>
             <label>
               Full Name
-              <input type="text" name="name" placeholder="Your full name" required />
+              <input type="text" name="name" required />
             </label>
             <label>
               Phone
-              <input type="tel" name="phone" placeholder="Best number to reach you" required />
+              <input type="tel" name="phone" required />
             </label>
             <label>
               Type of Service
@@ -441,14 +441,11 @@
               <textarea
                 name="message"
                 rows="5"
-                placeholder="Tell us a little about the problem or project"
                 required
               ></textarea>
             </label>
             <button class="button button-primary button-full" type="submit">Send Request</button>
-            <p class="form-note" id="form-status">
-              This form opens your email app with the request pre-filled.
-            </p>
+            <p class="form-note" id="form-status"></p>
           </form>
         </div>
       </section>
