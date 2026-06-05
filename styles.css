@@ -1211,6 +1211,10 @@ h3 {
     font-size: 0.96rem;
   }
 
+  .hero-visual {
+    display: none;
+  }
+
   .hero-scene,
   .service-card,
   .price-card,
