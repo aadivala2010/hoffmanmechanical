@@ -1,4 +1,3 @@
-const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const year = document.querySelector("#year");
 const serviceForm = document.querySelector("#service-form");
@@ -99,32 +98,32 @@ let testimonialIndex = 0;
 let testimonialTimer = null;
 let activeHeroService = null;
 
+const ensureHeroPanelVisible = () => {
+  if (!heroPanel || heroPanel.classList.contains("is-hidden")) {
+    return;
+  }
+
+  const rect = heroPanel.getBoundingClientRect();
+  const topPadding = 96;
+  const bottomPadding = 24;
+  let delta = 0;
+
+  if (rect.top < topPadding) {
+    delta = rect.top - topPadding;
+  } else if (rect.bottom > window.innerHeight - bottomPadding) {
+    delta = rect.bottom - (window.innerHeight - bottomPadding);
+  }
+
+  if (delta !== 0) {
+    window.scrollBy({
+      top: delta,
+      behavior: "smooth"
+    });
+  }
+};
+
 if (year) {
   year.textContent = new Date().getFullYear();
-}
-
-if (menuToggle && siteNav) {
-  const closeMenu = () => {
-    siteNav.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-  };
-
-  menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
-  });
-
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 760) {
-      closeMenu();
-    }
-  });
 }
 
 const setActiveService = (serviceKey) => {
@@ -173,6 +172,9 @@ const setActiveService = (serviceKey) => {
   heroInfoTitle.textContent = service.title;
   heroInfoText.textContent = service.text;
   heroInfoIcon.innerHTML = service.icon;
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(ensureHeroPanelVisible);
+  });
 };
 
 hotspotButtons.forEach((button) => {
@@ -241,13 +243,13 @@ if (serviceForm && formStatus) {
 }
 
 const updateScrollProgress = () => {
-  if (!progressBar) {
-    return;
+  if (progressBar) {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
   }
 
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-  progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+  updateActiveNav();
 };
 
 const sectionObserver = new IntersectionObserver(
@@ -304,27 +306,16 @@ countItems.forEach((item) => {
 
 const sections = Array.from(document.querySelectorAll("main section[id]"));
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
+const updateActiveNav = () => {
+  const navOffset = 140;
+  const currentSection = sections
+    .filter((section) => section.offsetTop <= window.scrollY + navOffset)
+    .at(-1);
 
-      navLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
-      });
-    });
-  },
-  {
-    threshold: 0.45,
-    rootMargin: "-15% 0px -45% 0px"
-  }
-);
-
-sections.forEach((section) => {
-  navObserver.observe(section);
-});
+  navLinks.forEach((link) => {
+    link.classList.toggle("is-active", Boolean(currentSection) && link.getAttribute("href") === `#${currentSection.id}`);
+  });
+};
 
 const showTestimonial = (index) => {
   if (!testimonialTrack) {
