@@ -1029,6 +1029,56 @@ h3 {
   resize: vertical;
 }
 
+.booking-hero {
+  min-height: calc(100vh - var(--header-height));
+  display: grid;
+  align-items: center;
+}
+
+.booking-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.booking-copy {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.booking-copy h1 {
+  max-width: 10ch;
+}
+
+.booking-copy p {
+  max-width: 38rem;
+  color: var(--muted);
+}
+
+.booking-callout {
+  display: inline-grid;
+  gap: 0.2rem;
+  width: fit-content;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(24, 88, 214, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.booking-callout a {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.booking-form {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+}
+
 .site-footer {
   padding: 1.25rem 0 1.75rem;
   background: rgba(252, 253, 255, 0.88);
@@ -1380,7 +1430,8 @@ h3 {
 
   .hero-grid,
   .split-layout,
-  .finance-grid {
+  .finance-grid,
+  .booking-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1391,6 +1442,10 @@ h3 {
 
   .footer-shell {
     grid-template-columns: 1fr auto;
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-grid {

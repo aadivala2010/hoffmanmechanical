@@ -232,9 +232,14 @@ if (serviceForm && formStatus) {
     }
 
     const subject = encodeURIComponent(`Service Request: ${service}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`
-    );
+    const bodyLines = Array.from(formData.entries())
+      .map(([key, value]) => [key, value.toString().trim()])
+      .filter(([, value]) => value)
+      .map(([key, value]) => {
+        const label = key.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+        return `${label}: ${value}`;
+      });
+    const body = encodeURIComponent(bodyLines.join("\n"));
 
     window.location.href = `mailto:hoffmanmech@yahoo.com?subject=${subject}&body=${body}`;
     formStatus.textContent = "Your email app should open with the request ready to send.";

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book HVAC Service | Hoffman Mechanical</title>
+    <meta
+      name="description"
+      content="Book HVAC service with Hoffman Mechanical for repair, installation, preventative maintenance, heat pumps, and mini splits."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="../index.html" aria-label="Hoffman Mechanical home">
+          <img class="brand-logo" src="../assets/images/logo.png" alt="Hoffman Mechanical logo" />
+          <span>
+            <strong>Hoffman Mechanical</strong>
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-menu" aria-label="Main navigation">
+          <a href="../index.html#services">Services</a>
+          <a href="../index.html#why-us">Why Us</a>
+          <a href="../index.html#pricing">Pricing</a>
+          <a class="is-active" href="index.html">Booking</a>
+          <a href="../index.html#contact">Contact</a>
+          <a class="button button-primary nav-cta" href="tel:7174150784">Call 717-415-0784</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="section booking-hero">
+        <div class="container booking-grid">
+          <div class="booking-copy reveal" data-reveal>
+            <p class="eyebrow">Book HVAC service</p>
+            <h1>Schedule Hoffman Mechanical</h1>
+            <p>
+              Request a service visit for HVAC repair, installation, maintenance,
+              heat pumps, mini splits, or financing questions.
+            </p>
+            <div class="booking-callout">
+              <strong>Need help faster?</strong>
+              <a href="tel:7174150784">Call 717-415-0784</a>
+            </div>
+          </div>
+
+          <form class="contact-form booking-form reveal" id="service-form" data-reveal>
+            <label>
+              Full Name
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" placeholder="Best number to reach you" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your email address" />
+            </label>
+            <label>
+              Service Address
+              <input type="text" name="address" placeholder="Street, city, and county" required />
+            </label>
+            <label>
+              Type of Service
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>HVAC Repair</option>
+                <option>HVAC Installation</option>
+                <option>Preventative Maintenance</option>
+                <option>Heat Pumps / Mini Splits</option>
+                <option>Financing Question</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <div class="form-row">
+              <label>
+                Preferred Date
+                <input type="date" name="preferred_date" />
+              </label>
+              <label>
+                Preferred Time
+                <select name="preferred_time">
+                  <option value="">Any time</option>
+                  <option>Morning</option>
+                  <option>Afternoon</option>
+                  <option>Evening</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Tell us what is going on with the system"
+                required
+              ></textarea>
+            </label>
+            <button class="button button-primary button-full" type="submit">Request Booking</button>
+            <p class="form-note" id="form-status">
+              This form opens your email app with the booking request pre-filled.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <strong>Hoffman Mechanical</strong>
+        <p>Reliable HVAC service for homes across Lancaster, Lebanon, Berks, and Dauphin Counties.</p>
+        <p class="footer-copy">&copy; <span id="year"></span> Hoffman Mechanical. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
