@@ -41,6 +41,10 @@
     </script>
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <span class="scroll-progress-bar"></span>
+    </div>
+
     <header class="site-header">
       <div class="container nav-shell">
         <a class="brand" href="#top" aria-label="Hoffman Mechanical home">
@@ -60,22 +64,26 @@
           <a href="#why-us">Why Us</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
-          <a class="button button-primary nav-cta" href="tel:7174150784">Call Now</a>
+          <a class="button button-primary nav-cta" href="tel:7174150784">Call 717-415-0784</a>
         </nav>
       </div>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Local, licensed, and ready when you need us</p>
-            <h1>Reliable HVAC Service You Can Trust</h1>
-            <p class="hero-text">
-              Hoffman Mechanical helps homeowners across Lancaster, Lebanon, Berks,
-              and Dauphin Counties with honest HVAC repair, expert installation,
-              preventative maintenance, and energy-efficient upgrades.
+        <div class="container hero-grid maintenance-hero">
+          <div class="hero-copy hero-enter">
+            <p class="eyebrow">
+              <span class="eyebrow-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M12 2l7 3v6c0 5-3.5 8.74-7 11-3.5-2.26-7-6-7-11V5l7-3zm0 3.08L7 7v3.95c0 3.63 2.37 6.47 5 8.32 2.63-1.85 5-4.69 5-8.32V7l-5-1.92z"
+                  />
+                </svg>
+              </span>
+              Local, licensed, and ready when you need us
             </p>
+            <h1>Reliable HVAC Maintenance You Can Trust</h1>
 
             <div class="hero-actions">
               <a class="button button-primary" href="tel:7174150784">Call 717-415-0784</a>
@@ -83,41 +91,87 @@
             </div>
 
             <ul class="hero-points" aria-label="Business highlights">
-              <li>Prompt scheduling without the all-day window</li>
-              <li>Clear pricing explained before work begins</li>
-              <li>Financing options available for bigger upgrades</li>
+              <li>
+                <span class="list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 1.75A10.25 10.25 0 112.75 12 10.26 10.26 0 0112 1.75zm0 1.5A8.75 8.75 0 1020.75 12 8.76 8.76 0 0012 3.25zm.75 3.5v4.94l3.2 1.84-.75 1.3-3.95-2.28V6.75z" />
+                  </svg>
+                </span>
+                Prompt scheduling without the all-day window
+              </li>
+              <li>
+                <span class="list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M11.24 2.76a2.5 2.5 0 011.52 0l6.32 2.06a2.5 2.5 0 011.66 2.38v3.48a3.25 3.25 0 01-.95 2.3l-7.5 7.5a3.25 3.25 0 01-4.6 0L2.96 15.8a3.25 3.25 0 010-4.6l7.5-7.5a3.25 3.25 0 012.3-.94h3.48a2.5 2.5 0 012.38 1.66l.17.52-6.55-2.14zm5.26 5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                  </svg>
+                </span>
+                Clear pricing explained before work begins
+              </li>
+              <li>
+                <span class="list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 2.25a.75.75 0 01.75.75v1.09a4.6 4.6 0 013.64 3.02.75.75 0 11-1.42.48 3.1 3.1 0 00-2.95-2.09H11a2.35 2.35 0 000 4.7h2a3.85 3.85 0 010 7.7h-.25V21a.75.75 0 01-1.5 0v-1.09a4.6 4.6 0 01-3.64-3.02.75.75 0 111.42-.48 3.1 3.1 0 002.95 2.09H13a2.35 2.35 0 000-4.7h-2a3.85 3.85 0 010-7.7h.25V3a.75.75 0 01.75-.75z" />
+                  </svg>
+                </span>
+                Financing options available for bigger upgrades
+              </li>
             </ul>
           </div>
 
-          <aside class="hero-visual">
-            <img
-              src="assets/images/hero-tech.png"
-              alt="Hoffman Mechanical technician illustration"
-            />
-            <div class="hero-card">
-              <p class="card-label">Trusted Home HVAC Care</p>
-              <h2>Heating and cooling support built around real homeowners.</h2>
-              <div class="card-stats">
-                <article>
-                  <strong>4 Counties</strong>
-                  <span>Lancaster, Lebanon, Berks, and Dauphin</span>
-                </article>
-                <article>
-                  <strong>All Seasons</strong>
-                  <span>Repairs, replacements, tune-ups, and upgrades</span>
-                </article>
-                <article>
-                  <strong>Real Support</strong>
-                </article>
+          <aside class="hero-visual hero-enter">
+            <div class="hero-scene" aria-label="Interactive HVAC maintenance explorer">
+              <img
+                class="hero-tech-image"
+                src="assets/images/hero-maintenance-grid.png"
+                alt="Six HVAC maintenance systems: oil tank, AC heat pump, gas furnace, boiler, mini split, and additional indoor unit"
+              />
+
+              <div class="hero-hotspots" role="tablist" aria-label="Maintenance services">
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-oil" data-service="oil" aria-label="Oil Maintenance" style="--tile-x: 0%; --tile-y: 0%;">
+                  <span class="tile-active-label" aria-hidden="true">Oil Maintenance</span>
+                </button>
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-ac" data-service="ac" aria-label="AC / Heat Pump Maintenance" style="--tile-x: 33.333%; --tile-y: 0%;">
+                  <span class="tile-active-label" aria-hidden="true">AC / Heat Pump</span>
+                </button>
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-gas" data-service="gas" aria-label="Gas Furnace Maintenance" style="--tile-x: 66.666%; --tile-y: 0%;">
+                  <span class="tile-active-label" aria-hidden="true">Gas Furnace</span>
+                </button>
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-boiler" data-service="boiler" aria-label="Boiler Maintenance" style="--tile-x: 0%; --tile-y: 50%;">
+                  <span class="tile-active-label" aria-hidden="true">Boiler</span>
+                </button>
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-mini" data-service="mini" aria-label="Mini Split Maintenance" style="--tile-x: 33.333%; --tile-y: 50%;">
+                  <span class="tile-active-label" aria-hidden="true">Mini Split</span>
+                </button>
+                <button class="hotspot image-hotspot" type="button" role="tab" aria-selected="false" aria-controls="hero-service-panel" id="tab-indoor" data-service="indoor" aria-label="Additional Indoor Unit" style="--tile-x: 66.666%; --tile-y: 50%;">
+                  <span class="tile-active-label" aria-hidden="true">Indoor Unit</span>
+                </button>
               </div>
             </div>
+
+            <div class="hero-mobile-tabs" aria-label="Maintenance services">
+              <button class="mobile-hotspot" type="button" data-service="oil">Oil</button>
+              <button class="mobile-hotspot" type="button" data-service="ac">AC / Heat Pump</button>
+              <button class="mobile-hotspot" type="button" data-service="gas">Gas Furnace</button>
+              <button class="mobile-hotspot" type="button" data-service="boiler">Boiler</button>
+              <button class="mobile-hotspot" type="button" data-service="mini">Mini Split</button>
+              <button class="mobile-hotspot" type="button" data-service="indoor">Indoor Unit</button>
+            </div>
+
+            <section class="hero-info-panel is-hidden" id="hero-service-panel" role="tabpanel" aria-labelledby="tab-oil" tabindex="-1">
+              <div class="hero-info-icon" aria-hidden="true"></div>
+              <div class="hero-info-copy">
+                <p class="hero-info-label">Oil Maintenance</p>
+                <h2 id="hero-info-title">Annual oil system care for dependable heat.</h2>
+                <p id="hero-info-text">Burner cleaning, filter checks, system inspection, and performance tune-up.</p>
+              </div>
+            </section>
           </aside>
         </div>
       </section>
 
       <section class="section" id="services">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal" data-reveal>
             <p class="eyebrow">Services</p>
             <h2>Complete HVAC service for year-round comfort</h2>
             <p>
@@ -127,33 +181,61 @@
           </div>
 
           <div class="service-grid">
-            <article class="service-card">
+            <article class="service-card reveal" data-reveal>
               <img src="assets/images/service-repair.png" alt="HVAC repair service" />
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M21.06 5.38a4.5 4.5 0 01-5.87 5.87l-6.8 6.8a2.75 2.75 0 11-3.89-3.89l6.8-6.8a4.5 4.5 0 015.87-5.87l-2.17 2.17a1.75 1.75 0 102.47 2.47l2.17-2.17zM5.56 15.22a1.25 1.25 0 101.77 1.77l6.53-6.53a4.47 4.47 0 01-1.77-1.77l-6.53 6.53z"
+                  />
+                </svg>
+              </div>
               <h3>HVAC Repair</h3>
               <p>
                 Fast diagnosis and dependable repairs for heating and cooling systems
                 of all makes and models.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal" data-reveal>
               <img src="assets/images/service-installation.png" alt="HVAC installation service" />
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M12 2.75a9.25 9.25 0 109.25 9.25A9.26 9.26 0 0012 2.75zm0 1.5a7.72 7.72 0 015.91 2.75h-3.16v1.5h4.17a7.7 7.7 0 01.58 3H16v1.5h3.5a7.7 7.7 0 01-.58 3h-4.17V17h3.16A7.75 7.75 0 116.09 7h3.16V5.5H5.08A7.72 7.72 0 0112 4.25z"
+                  />
+                </svg>
+              </div>
               <h3>HVAC Installation</h3>
               <p>
                 Properly sized, professionally installed systems that deliver lasting
                 comfort and efficiency.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal" data-reveal>
               <img src="assets/images/service-maintenance.png" alt="HVAC preventative maintenance service" />
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M11.25 2.5h1.5v4.25L15.94 3.56l1.06 1.06-3.19 3.19H18.5v1.5h-4.69L17 12.5l-1.06 1.06-3.19-3.19v4.69h-1.5v-4.69l-3.19 3.19L7 12.5l3.19-3.19H5.5v-1.5h4.69L7 4.62l1.06-1.06 3.19 3.19V2.5zM11.25 16h1.5v2.5h-1.5zM11.25 20h1.5v1.5h-1.5z"
+                  />
+                </svg>
+              </div>
               <h3>Preventative Maintenance</h3>
               <p>
                 Seasonal tune-ups that help reduce breakdowns, protect efficiency,
                 and extend equipment life.
               </p>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal" data-reveal>
               <img src="assets/images/service-minisplit.png" alt="Heat pump and mini split service" />
-              <h3>Heat Pumps & Mini Splits</h3>
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M5.25 9.5c0-1.8 1.45-3.25 3.25-3.25 1.25 0 2.33.69 2.88 1.72A3.76 3.76 0 0115 6.25c2.07 0 3.75 1.68 3.75 3.75 0 .41-.07.8-.19 1.17A3.25 3.25 0 0119 17.5H8.25a3.25 3.25 0 01-.63-6.44A3.4 3.4 0 015.25 9.5zm3.81 6.5H19a1.75 1.75 0 00.19-3.49l-1.2-.13.36-1.15c.1-.31.15-.64.15-.98A2.25 2.25 0 0015 8a2.23 2.23 0 00-1.94 1.1l-.54.96-.74-.82A1.96 1.96 0 008.5 7.75 1.75 1.75 0 006.75 9.5c0 .37.12.74.34 1.04l.71.98-1.21.02a1.75 1.75 0 00.16 3.5h2.31z"
+                  />
+                </svg>
+              </div>
+              <h3>Heat Pumps &amp; Mini Splits</h3>
               <p>
                 Flexible, energy-saving solutions for single rooms, additions, or
                 whole-home comfort.
@@ -165,13 +247,23 @@
 
       <section class="section section-accent" id="why-us">
         <div class="container split-layout">
-          <div class="split-copy">
+          <div class="split-copy reveal" data-reveal>
             <p class="eyebrow">Why homeowners choose Hoffman Mechanical</p>
             <h2>Professional service without the runaround.</h2>
             <p>
-              Homeowners stick with Hoffman Mechanical because the experience is
-              straightforward from start to finish. You get honest answers, fair
-              recommendations, and work done with care.
+              We're not a franchise. We're not a call center. We're your neighbors -
+              a locally owned and operated HVAC company that has been taking care of
+              homes across Lancaster, Lebanon, Berks, and Dauphin Counties,
+              Pennsylvania for years.
+            </p>
+            <p>
+              Every technician on our team is certified, experienced, and genuinely
+              takes pride in their work. We built this company on the belief that
+              homeowners deserve honest answers, fair prices, and an HVAC contractor
+              they can actually trust. Whether you need heating repair in the middle
+              of January, a new AC installation before summer, or a maintenance
+              tune-up to keep your system running efficiently, we've got you covered,
+              close to home.
             </p>
 
             <div class="feature-list">
@@ -190,7 +282,7 @@
             </div>
           </div>
 
-          <div class="feature-image">
+          <div class="feature-image reveal" data-reveal>
             <img src="assets/images/why-us.png" alt="Hoffman Mechanical service work" />
           </div>
         </div>
@@ -198,33 +290,33 @@
 
       <section class="section" id="pricing">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal" data-reveal>
             <p class="eyebrow">Maintenance pricing</p>
             <h2>Straightforward pricing for preventative care</h2>
           </div>
 
           <div class="pricing-grid">
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>Oil Maintenance</span>
               <strong>$275</strong>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>AC / Heat Pump Maintenance</span>
               <strong>$130</strong>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>Gas Furnace Maintenance</span>
               <strong>$115</strong>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>Boiler Maintenance (Non-Oil)</span>
               <strong>$225</strong>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>Mini Split Maintenance</span>
               <strong>$160</strong>
             </article>
-            <article class="price-card">
+            <article class="price-card reveal" data-reveal>
               <span>Each Additional Indoor Unit</span>
               <strong>$40</strong>
             </article>
@@ -232,31 +324,8 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container cta-panel">
-          <div class="cta-copy">
-            <p class="eyebrow">Need service today?</p>
-            <h2>Call now and get your comfort back on track.</h2>
-            <p>
-              From furnace issues in winter to AC breakdowns in summer, Hoffman
-              Mechanical is ready to help.
-            </p>
-
-            <div class="cta-actions">
-              <a class="button button-primary" href="tel:7174150784">Call Now</a>
-              <a class="button button-secondary" href="#contact">Request Service</a>
-            </div>
-          </div>
-          <img
-            class="cta-image"
-            src="assets/images/emergency-service.png"
-            alt="Emergency HVAC service"
-          />
-        </div>
-      </section>
-
       <section class="section section-dark">
-        <div class="container finance-grid">
+        <div class="container finance-grid reveal" data-reveal>
           <div>
             <p class="eyebrow">Flexible financing</p>
             <h2>Comfort upgrades do not have to wait.</h2>
@@ -271,42 +340,61 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal" data-reveal>
             <p class="eyebrow">Testimonials</p>
             <h2>What local customers appreciate most</h2>
           </div>
 
-          <div class="testimonial-grid">
-            <blockquote class="testimonial">
-              <p>
-                Called Hoffman Mechanical on a Friday afternoon when our furnace went
-                out. They came the same day, figured out the problem quickly, and had
-                us warm again before dinner.
-              </p>
-              <footer>James R., Lancaster County</footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                Other companies tried to sell me a whole new system. Hoffman
-                Mechanical told me the truth, fixed it for a fair price, and earned
-                my business.
-              </p>
-              <footer>Linda K., Lebanon County</footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                Clean work, on time, and they walked me through the whole system
-                before they left. Exactly the kind of company you want in your home.
-              </p>
-              <footer>Tom S., Berks County</footer>
-            </blockquote>
+          <div class="testimonial-carousel reveal" data-reveal>
+            <div class="testimonial-track" data-testimonial-track>
+              <blockquote class="testimonial is-active">
+                <p>
+                  Called Hoffman Mechanical on a Friday afternoon when our furnace went
+                  out. They came the same day, figured out the problem quickly, and had
+                  us warm again before dinner.
+                </p>
+                <footer>James R., Lancaster County</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p>
+                  Other companies tried to sell me a whole new system. Hoffman
+                  Mechanical told me the truth, fixed it for a fair price, and earned
+                  my business.
+                </p>
+                <footer>Linda K., Lebanon County</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p>
+                  Clean work, on time, and they walked me through the whole system
+                  before they left. Exactly the kind of company you want in your home.
+                </p>
+                <footer>Tom S., Berks County</footer>
+              </blockquote>
+            </div>
+            <div class="testimonial-controls" aria-label="Testimonial controls">
+              <button class="testimonial-arrow" type="button" data-testimonial-prev aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M14.78 5.22a.75.75 0 010 1.06L9.06 12l5.72 5.72a.75.75 0 11-1.06 1.06l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 011.06 0z" />
+                </svg>
+              </button>
+              <div class="testimonial-dots" role="tablist" aria-label="Testimonial slides">
+                <button class="testimonial-dot is-active" type="button" aria-label="Show testimonial 1" data-testimonial-dot="0"></button>
+                <button class="testimonial-dot" type="button" aria-label="Show testimonial 2" data-testimonial-dot="1"></button>
+                <button class="testimonial-dot" type="button" aria-label="Show testimonial 3" data-testimonial-dot="2"></button>
+              </div>
+              <button class="testimonial-arrow" type="button" data-testimonial-next aria-label="Next testimonial">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M9.22 18.78a.75.75 0 010-1.06L14.94 12 9.22 6.28a.75.75 0 111.06-1.06l6.25 6.25a.75.75 0 010 1.06l-6.25 6.25a.75.75 0 01-1.06 0z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section section-accent" id="contact">
         <div class="container contact-grid">
-          <div>
+          <div class="reveal" data-reveal>
             <p class="eyebrow">Contact Hoffman Mechanical</p>
             <h2>Request service or call for faster help</h2>
             <p>
@@ -330,7 +418,7 @@
             </div>
           </div>
 
-          <form class="contact-form" id="service-form">
+          <form class="contact-form reveal" id="service-form" data-reveal>
             <label>
               Full Name
               <input type="text" name="name" placeholder="Your full name" required />
@@ -348,6 +436,7 @@
                 <option>Preventative Maintenance</option>
                 <option>Heat Pumps / Mini Splits</option>
                 <option>Financing Question</option>
+                <option>Other</option>
               </select>
             </label>
             <label>
